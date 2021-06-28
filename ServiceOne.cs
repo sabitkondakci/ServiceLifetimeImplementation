@@ -20,6 +20,7 @@ public class ServiceOne:IServiceMarkerOne
 
     public void PrintConsole()
     {
+        Console.WriteLine(new String('-',60)+"\n");
         Console.WriteLine("Service Lifetime Test, ServiceOne");
         Console.WriteLine($"Singleton - {Singleton.Id}");
         Console.WriteLine($"Singleton Object - {SingObject.Id}");

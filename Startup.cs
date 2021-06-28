@@ -33,6 +33,7 @@ namespace ServiceLifetime
             services.AddControllers();
             //Lifetime services
             services.AddSingleton<ISingletonObject>(s => new Operation());
+            services.AddSingleton<ISingletonObject>(s => new Operation(Guid.Empty));
             services.AddSingleton<ISingleton,Operation>();
             services.AddScoped<IScoped,Operation>();
             services.AddTransient<ITransient,Operation>();
