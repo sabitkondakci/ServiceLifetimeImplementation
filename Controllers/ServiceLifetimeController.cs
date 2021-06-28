@@ -20,7 +20,7 @@ namespace ServiceLifetime.Controllers
 
         public IServiceMarkerOne SerOne { get; }
         public IServiceMarkerTwo SerTwo { get; }
-        //IEnumerable stores each ISingletonObject injections which is in Startup.cs / ConfigurationServices.
+        //IEnumerable stores each ISingletonObject injection which is in Startup.cs / ConfigurationServices.
         public IEnumerable<ISingletonObject> EnumSingObjects { get; }
 
         [HttpGet]
