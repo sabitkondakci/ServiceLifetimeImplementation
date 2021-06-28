@@ -4,4 +4,4 @@ An example of service lifetimes;  transient + scoped + singleton + multiple obje
 
 You can visit [Microsoft's Page][Microsoft] for more detailed info.
 
-[Micsoroft]:https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes "Dependency injection and service lifetimes"
+[Microsoft]:https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes "Dependency injection and service lifetimes"
