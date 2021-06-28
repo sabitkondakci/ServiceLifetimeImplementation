@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
@@ -33,7 +34,11 @@ namespace ServiceLifetime
             services.AddControllers();
             //Lifetime services
             services.AddSingleton<ISingletonObject>(s => new Operation());
-            services.AddSingleton<ISingletonObject>(s => new Operation(Guid.Empty));
+            //services.AddSingleton<ISingletonObject>(s => new Operation(Guid.Empty));
+
+            //check out if there's an injection assigned to ISingletonObject beforehand
+            //if so, skip otherwise assign it.
+            services.TryAddSingleton<ISingletonObject>(s => new Operation(Guid.Empty));
             services.AddSingleton<ISingleton,Operation>();
             services.AddScoped<IScoped,Operation>();
             services.AddTransient<ITransient,Operation>();
